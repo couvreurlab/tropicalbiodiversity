@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/couvreurlab-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/couvreurlab-32x32.png">
+<link rel="icon" type="image/png" sizes="48x48" href="images/favicon_io/couvreurlab-48x48.png">
+<link rel="icon" type="image/x-icon" href="images/favicon_io/couvreurlab.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/couvreurlab-apple-touch-icon.png">
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PeachPalm4LIFE project</title>
+    <style>
+
+        @import url('https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400&family=Lato:wght@400&display=swap');
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-weight: normal;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            padding-top: 60px;
+        }
+
+        /* ── Navigation ── */
+        .nav-box {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000;
+            z-index: 1000;
+            padding: 0.75em 1em;
+        }
+
+        nav {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.4em 0.8em;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            white-space: nowrap;
+        }
+
+        /* ── Header ── */
+        header {
+            position: relative;
+            text-align: center;
+            color: #fff;
+            padding: 7em 2em;
+            background-size: cover;
+            background-position: center;
+            background-color: #2c6e49;
+            background-image: url("images/imageB.png");
+            font-family: 'Fjalla One', sans-serif;
+        }
+
+        header h1 {
+            color: #fff;
+            margin: 0.5em 0;
+            font-size: clamp(1.4rem, 4vw, 2.4rem);
+            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+        }
+
+        /* ── Funding badge ── */
+        .funding-badge {
+            display: inline-block;
+            background-color: rgba(0,0,0,0.55);
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            padding: 0.4em 1em;
+            border-radius: 4px;
+            margin-top: 0.8em;
+        }
+
+        /* ── Main section ── */
+        section {
+            max-width: 1200px;
+            margin: 2em auto;
+            padding: 2em;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+        }
+
+        h2 {
+            color: #3498db;
+            font-weight: bold;
+            font-family: 'Fjalla One', sans-serif;
+            margin-top: 1.6em;
+        }
+
+        h3 {
+            color: #2c6e49;
+            font-family: 'Fjalla One', sans-serif;
+            margin-top: 1.2em;
+        }
+
+        p {
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        a {
+            color: #1a6ebd;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ── Three-photo grid ── */
+        .photo-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1em;
+            margin-top: 1.5em;
+        }
+
+        .photo-container img {
+            flex: 1 1 28%;
+            min-width: 180px;
+            border-radius: 8px;
+            object-fit: cover;
+            aspect-ratio: 1 / 1;
+        }
+
+        /* ── WP cards ── */
+        .wp-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.2em;
+            margin-top: 1.2em;
+        }
+
+        .wp-card {
+            background-color: #f0f8f4;
+            border-left: 4px solid #2c6e49;
+            border-radius: 6px;
+            padding: 1em 1.2em;
+        }
+
+        .wp-card h3 {
+            margin: 0 0 0.4em 0;
+            font-size: 1rem;
+            color: #2c6e49;
+        }
+
+        .wp-card p {
+            margin: 0;
+            font-size: 0.9rem;
+            text-align: left;
+        }
+
+        /* ── Partners logos / list ── */
+        .partner-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6em 1.2em;
+            margin-top: 0.8em;
+            padding: 0;
+            list-style: none;
+        }
+
+        .partner-list li {
+            background-color: #eaf4fb;
+            border-radius: 4px;
+            padding: 0.35em 0.8em;
+            font-size: 0.9rem;
+            font-weight: bold;
+            color: #1a6ebd;
+        }
+
+        /* ── Team table ── */
+        .team-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+            margin-top: 1em;
+            overflow-x: auto;
+            display: block;
+        }
+
+        .team-table th {
+            background-color: #2c6e49;
+            color: #fff;
+            padding: 0.6em 0.8em;
+            text-align: left;
+        }
+
+        .team-table td {
+            padding: 0.5em 0.8em;
+            border-bottom: 1px solid #e0e0e0;
+            vertical-align: top;
+        }
+
+        .team-table tr:nth-child(even) td {
+            background-color: #f7fdf9;
+        }
+
+        /* ── Info box ── */
+        .info-box {
+            background-color: #f0f8f4;
+            border-left: 4px solid #2c6e49;
+            border-radius: 4px;
+            padding: 1em 1.4em;
+            margin: 1.2em 0;
+        }
+
+        .info-box p {
+            margin: 0.3em 0;
+            text-align: left;
+        }
+
+        /* ── Publications placeholder ── */
+        .pub-placeholder {
+            background-color: #f9f9f9;
+            border: 1px dashed #ccc;
+            border-radius: 6px;
+            padding: 1.5em;
+            text-align: center;
+            color: #888;
+            font-style: italic;
+            margin-top: 1em;
+        }
+
+        /* ── Footer ── */
+        footer {
+            text-align: center;
+            padding: 0.8em 1em;
+            background-color: #3498db;
+            color: #fff;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .footer-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5em;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1em;
+        }
+
+        .logo-container img {
+            width: 50px;
+            height: auto;
+            margin: 0;
+        }
+
+        /* ── Mobile ── */
+        @media (max-width: 600px) {
+            body { padding-top: 80px; }
+            header { padding: 4em 1em; }
+            section { margin: 1em; padding: 1.2em; }
+            nav a { font-size: 0.8rem; }
+            .footer-container { flex-direction: column; text-align: center; }
+            .photo-container img { flex: 1 1 100%; aspect-ratio: 4/3; }
+        }
+
+    </style>
+</head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-PM6HMDSPE7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-PM6HMDSPE7');
+</script>
+
+<body>
+
+<!-- Navigation -->
+<div class="nav-box">
+    <nav>
+        <a href="index.html">HOME</a>
+        <a href="people.html">PEOPLE</a>
+        <a href="peachpalm.html">PeachPalm4LIFE</a>
+        <a href="publications.html">PUBLICATIONS</a>
+        <a href="videos.html">VIDEOS</a>
+        <a href="apc.html">AGPC</a>
+        <a href="roadtoerc.html">ERC BLOG</a>
+    </nav>
+</div>
+
+<header>
+    <h1>PeachPalm4LIFE</h1>
+    <h1 style="font-size: clamp(1rem, 2.5vw, 1.4rem); font-weight: normal;">Sustainable management and transdisciplinary valorization of the neglected domesticated peach palm (<em>Bactris gasipaes</em>) in the Upper Amazon</h1>
+    <div class="funding-badge">Funded by ANR (Agence Nationale de la Recherche) · 60 months</div>
+</header>
+
+<section>
+
+    <div class="info-box">
+        <p><strong>Funding:</strong> ANR PRC (AAPG2025) — H.01: Science de la durabilité</p>
+        <p><strong>Coordinator:</strong> Thomas L.P. Couvreur (IRD-DIADE)</p>
+        <p><strong>Co-PI:</strong> Irene Teixidor-Toneu (IRD-IMBE)</p>
+        <p><strong>Duration:</strong> 60 months · 2026-2023</p>
+    </div>
+
+    <p>PeachPalm4LIFE is a transdisciplinary research project focused on the peach palm, <em>Bactris gasipaes</em> var. <em>gasipaes</em> — the only truly domesticated palm of the Amazon and a cornerstone of Indigenous agroforestry systems. Despite its cultural, nutritional, and economic importance, peach palm cultivation is increasingly being abandoned, and its remarkable diversity remains poorly understood and undervalued.</p>
+
+    <p>The project integrates Indigenous knowledge, agroecological practices, and genomic science to unlock the full potential of peach palm for sustainable development in the Upper Amazon — contributing to food security, biodiversity conservation, and climate resilience, while upholding the cultural values and governance of Indigenous peoples.</p>
+
+    <!-- Three photos -->
+    <div class="photo-container">
+        <img src="images/imageA.png" alt="Peach palm fruits in an Ecuadorian swidden">
+        <img src="images/imageB.png" alt="Peach palm fruit">
+        <img src="images/imageC.png" alt="Indigenous community preparing peach palm">
+    </div>
+
+    <!-- Objectives -->
+    <h2>Objectives</h2>
+    <p>PeachPalm4LIFE has four specific objectives:</p>
+    <ol style="line-height: 1.9; padding-left: 1.4em;">
+        <li>Develop and implement transdisciplinary approaches to <strong>co-produce knowledge</strong> about peach palm agroecological systems with Indigenous peoples.</li>
+        <li>Unravel the <strong>genetic, environmental, and cultural drivers</strong> shaping peach palm diversity in the Upper Amazon.</li>
+        <li>Understand how Indigenous <strong>knowledge, governance, and value chains</strong> sustain this diversity given the species' ecological constraints.</li>
+        <li><strong>Co-develop innovative solutions</strong> — technical, social, and policy-driven — to support the sustainability of peach palm in local food systems.</li>
+    </ol>
+
+    <!-- Work packages -->
+    <h2>Work Packages</h2>
+    <div class="wp-grid">
+        <div class="wp-card">
+            <h3>WP0 · Coordination</h3>
+            <p>Coordination, communication, and open science across all partners and WPs.</p>
+        </div>
+        <div class="wp-card">
+            <h3>WP1 · Co-construction</h3>
+            <p>Participatory workshops with three Ecuadorian Indigenous nationalities (Kichwa, Sápara, Shuar) to co-identify challenges and co-design sustainability indicators.</p>
+        </div>
+        <div class="wp-card">
+            <h3>WP2 · Biocultural Diversity</h3>
+            <p>Regional survey (60 communities, Upper Amazon) integrating cultural, phenotypic, and genomic data to map drivers of peach palm diversity.</p>
+        </div>
+        <div class="wp-card">
+            <h3>WP3 · Fruit Diversity</h3>
+            <p>Local-scale study in Ecuador on the genetic basis of fruit color, pollination ecology, and Indigenous knowledge systems sustaining fruit diversity.</p>
+        </div>
+        <div class="wp-card">
+            <h3>WP4 · Innovation</h3>
+            <p>Co-development of technical innovations (FabLab), policy briefs, educational materials, and Theatre Forum engagements with communities and the public.</p>
+        </div>
+    </div>
+
+    <!-- Geographic scope -->
+    <h2>Geographic Scope</h2>
+    <p>The project operates at two scales: a <strong>local scale in Ecuador</strong> (WP1, WP3, WP4) working with three Indigenous nationalities, and a <strong>sub-regional scale across the Upper Amazon</strong> — southern Colombia, Ecuador, and northern Peru (WP2).</p>
+
+    <div class="photo-container">
+        <img src="images/amazon.png" alt="Upper Amazon map area">
+        <img src="images/kickoff.png" alt="Kick off meeting of project in Ecuador - Tena - IKIAM - PUCE">
+    </div>
+
+    <!-- Partners -->
+    <h2>Partners</h2>
+    <ul class="partner-list">
+        <li>IRD-DIADE (France)</li>
+        <li>IRD-IMBE (France)</li>
+        <li>INRAE-SADAPT (France)</li>
+        <li>PUCE (Ecuador)</li>
+        <li>IKIAM (Ecuador)</li>
+        <li>IRD Ecuador</li>
+        <li>Communidad Jandiyacu - Nationalidad Sapara (Ecuador)</li>
+        <li>Communidad Shakaim - Nationalidad Shuar (Ecuador)</li>
+        <li>Communidad AMAKIN - Nationalidad Kichua (Ecuador)</li>
+        <li>Communidad AMUPAKIN - Nationalidad Kichua (Ecuador)</li>
+        <li>Naturaleza y Cultura Internacional / NGO (Ecuador)</li>
+        <li>CGA-AEDSP (Ecuador)</li>
+        <li>SINCHI (Colombia)</li>
+        <li>IIAP (Peru)</li>
+        <li>INIA (Peru)</li>
+        
+    </ul>
+
+    <!-- Publications -->
+    <h2>Publications from PeachPalm4LIFE</h2>
+    <div class="pub-placeholder">
+        <p>Publications will appear here as the project progresses.</p>
+    </div>
+
+</section>
+
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2026 Thomas L.P. Couvreur @ird</p>
+        <div class="logo-container">
+            <img src="images/ird.png" alt="IRD">
+            <img src="images/diade.png" alt="DIADE">
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
