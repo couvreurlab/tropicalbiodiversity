@@ -1,327 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/couvreurlab-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/couvreurlab-32x32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="images/favicon_io/couvreurlab-48x48.png">
 <link rel="icon" type="image/x-icon" href="images/favicon_io/couvreurlab.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/couvreurlab-apple-touch-icon.png">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeachPalm4LIFE project</title>
-    <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400&family=Lato:wght@400&display=swap');
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            font-weight: normal;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            padding-top: 60px;
-        }
-
-        /* ── Navigation ── */
-        .nav-box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            z-index: 1000;
-            padding: 0.75em 1em;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.4em 0.8em;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        /* ── Header ── */
-        header {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            padding: 7em 2em;
-            background-size: cover;
-            background-position: center;
-            background-color: #2c6e49;
-            background-image: url("images/videos.png");
-            font-family: 'Fjalla One', sans-serif;
-        }
-
-        header h1 {
-            color: #fff;
-            margin: 0.5em 0;
-            font-size: clamp(1.4rem, 4vw, 2.4rem);
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-        }
-
-        /* ── Funding badge ── */
-        .funding-badge {
-            display: inline-block;
-            background-color: rgba(0,0,0,0.55);
-            color: #fff;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.9rem;
-            padding: 0.4em 1em;
-            border-radius: 4px;
-            margin-top: 0.8em;
-        }
-
-        /* ── Main section ── */
-        section {
-            max-width: 1200px;
-            margin: 2em auto;
-            padding: 2em;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            font-family: 'Lato', sans-serif;
-        }
-
-        h2 {
-            color: #3498db;
-            font-weight: bold;
-            font-family: 'Fjalla One', sans-serif;
-            margin-top: 1.6em;
-        }
-
-        h3 {
-            color: #2c6e49;
-            font-family: 'Fjalla One', sans-serif;
-            margin-top: 1.2em;
-        }
-
-        p {
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        a {
-            color: #1a6ebd;
-            text-decoration: underline;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ── Three-photo grid ── */
-        .photo-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
-            margin-top: 1.5em;
-        }
-
-        .photo-container img {
-            flex: 1 1 28%;
-            min-width: 180px;
-            border-radius: 8px;
-            object-fit: cover;
-            aspect-ratio: 1 / 1;
-        }
-
-        /* ── WP cards ── */
-        .wp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2em;
-            margin-top: 1.2em;
-        }
-
-        .wp-card {
-            background-color: #f0f8f4;
-            border-left: 4px solid #2c6e49;
-            border-radius: 6px;
-            padding: 1em 1.2em;
-        }
-
-        .wp-card h3 {
-            margin: 0 0 0.4em 0;
-            font-size: 1rem;
-            color: #2c6e49;
-        }
-
-        .wp-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            text-align: left;
-        }
-
-        /* ── Partners logos / list ── */
-        .partner-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6em 1.2em;
-            margin-top: 0.8em;
-            padding: 0;
-            list-style: none;
-        }
-
-        .partner-list li {
-            background-color: #eaf4fb;
-            border-radius: 4px;
-            padding: 0.35em 0.8em;
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #1a6ebd;
-        }
-
-        /* ── Team table ── */
-        .team-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-            margin-top: 1em;
-            overflow-x: auto;
-            display: block;
-        }
-
-        .team-table th {
-            background-color: #2c6e49;
-            color: #fff;
-            padding: 0.6em 0.8em;
-            text-align: left;
-        }
-
-        .team-table td {
-            padding: 0.5em 0.8em;
-            border-bottom: 1px solid #e0e0e0;
-            vertical-align: top;
-        }
-
-        .team-table tr:nth-child(even) td {
-            background-color: #f7fdf9;
-        }
-
-        /* ── Info box ── */
-        .info-box {
-            background-color: #f0f8f4;
-            border-left: 4px solid #2c6e49;
-            border-radius: 4px;
-            padding: 1em 1.4em;
-            margin: 1.2em 0;
-        }
-
-        .info-box p {
-            margin: 0.3em 0;
-            text-align: left;
-        }
-
-        /* ── Publications placeholder ── */
-        .pub-placeholder {
-            background-color: #f9f9f9;
-            border: 1px dashed #ccc;
-            border-radius: 6px;
-            padding: 1.5em;
-            text-align: center;
-            color: #888;
-            font-style: italic;
-            margin-top: 1em;
-        }
-
-        /* ── Footer ── */
-        footer {
-            text-align: center;
-            padding: 0.8em 1em;
-            background-color: #3498db;
-            color: #fff;
-            font-family: 'Lato', sans-serif;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.5em;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1em;
-        }
-
-        .logo-container img {
-            width: 50px;
-            height: auto;
-            margin: 0;
-        }
-
-        /* ── Mobile ── */
-        @media (max-width: 600px) {
-            body { padding-top: 80px; }
-            header { padding: 4em 1em; }
-            section { margin: 1em; padding: 1.2em; }
-            nav a { font-size: 0.8rem; }
-            .footer-container { flex-direction: column; text-align: center; }
-            .photo-container img { flex: 1 1 100%; aspect-ratio: 4/3; }
-        }
-
-    </style>
-</head>
-
+    <meta name="description" content="Field expedition videos and outreach from the Tropical Biodiversity Evolution Lab, exploring tropical rain forests in Ecuador, Cameroon, and beyond.">
+    <meta property="og:title" content="Videos and Outreach - Tropical Biodiversity Evolution Lab">
+    <meta property="og:description" content="Field expedition videos and outreach from the Tropical Biodiversity Evolution Lab.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://couvreurlab.org/videos.html">
+    <meta property="og:image" content="https://couvreurlab.org/images/videos.png">
+    <title>Videos and Outreach</title>
+    <link rel="stylesheet" href="style.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM6HMDSPE7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-PM6HMDSPE7');
 </script>
-
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- 
- 
+</head>
 <body>
-    <!-- Black box for navigation links -->
+
 <div class="nav-box">
-    <!-- Navigation links -->
     <nav>
-	    <a href="index.html">HOME</a>
+        <a href="index.html">HOME</a>
         <a href="people.html">PEOPLE</a>
-        <a href="peachpalm.html">PeachPalm4LIFE ANR</a>
+        <a href="peachpalm.html">PeachPalm4LIFE</a>
         <a href="publications.html">PUBLICATIONS</a>
-        <a href="videos.html">VIDEOS</a>
+        <a href="videos.html" class="active">VIDEOS</a>
         <a href="apc.html">AGPC</a>
-		    <a href="roadtoerc.html">ERC BLOG</a>
+        <a href="roadtoerc.html">ERC BLOG</a>
     </nav>
 </div>
 
-    <header>
-        <h1 class="white-text">VIDEOS AND OUTREACH</h1>
+    <header style="background-image: url('images/videos.png');">
+        <h1>VIDEOS AND OUTREACH</h1>
     </header>
 
     <section>
-	
-	<p>Below is a selection of some of the videos we film when in the field. These are amateur videos, mounted and edited by myself in my spare time. It is a nice way to communicate about our work in the field. For more videos visit <a href="https://www.youtube.com/channel/UCO9_qeJJMoeBw8KWvptcJZQ" target="_blank">my Youtube channel</a>. There are also links to other out reaches I have done on podcasts and online events.</p>
-	
-	<h2>videos from the field</h2>
-	
+
+    <p>Below is a selection of some of the videos we film when in the field. These are amateur videos, mounted and edited by myself in my spare time. It is a nice way to communicate about our work in the field. For more videos visit <a href="https://www.youtube.com/channel/UCO9_qeJJMoeBw8KWvptcJZQ" target="_blank">my Youtube channel</a>. There are also links to other out reaches I have done on podcasts and online events.</p>
+
+    <h2>videos from the field</h2>
+
 <div class="video-section">
     <div class="video-container">
         <iframe width="500" height="315" src="https://www.youtube.com/embed/wV-mnv-z2vU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
@@ -330,7 +57,6 @@
         <p>A botanical expedition to the deep Amazon region of the Reserva Faunistica Cuyabeno, Orellana, Ecuador. Once again we visited a little-explored region of Ecuador. We traveled by car and then boat for two days.</p>
     </div>
 </div>
-
 
 <br>
 
@@ -342,7 +68,6 @@
         <p>A video of our botanical expedition to collect Annonaceae in the #Sápara territory, #Pastaza region of #Ecuador. This region is little explored. We took a small plane to the Balsaura community, where we were hosted by Narcisa and Juan Pio. The expedition was under the guidance of Cesario Santi, from the #Sápara nationality.</p>
     </div>
 </div>
-
 
 <br>
 
@@ -366,26 +91,23 @@
     </div>
 </div>
 
-
 <br>
 
-	<h2>podcasts and other programs</h2>
+    <h2>podcasts and other programs</h2>
 
 <div class="photo-text-container">
-    <!-- Photo on the left -->
-    <img class="left-photo" src="images/podcast.JPG" alt="podcast" width="200" height="200">
-
-    <!-- Text on the right -->
+    <img class="left-photo" src="images/podcast.JPG" alt="podcast" width="200" height="200" loading="lazy">
     <div class="right-text">
         <p><a href="https://www.indefenseofplants.com/podcast/2019/2/10/ep-199-understanding-rainforests-through-evolution" target="_blank">Podcast on "In Defense of Plants"</a></p>
         <p>Podcast interview (46 min) with Matt from <a href="https://doi.org/10.1111/jbi.14606" target="_blank">In Defense of Plants</a> about tropical rain forest evolution.</p>
     </div>
 </div>
 
+    </section>
+
 <footer>
     <div class="footer-container">
         <p>&copy; 2026 Thomas L.P. Couvreur @ird </p>
-        
         <div class="logo-container">
             <img src="images/ird.png" alt="IRD">
             <img src="images/diade.png" alt="DIADE">

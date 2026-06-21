@@ -1,289 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/couvreurlab-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/couvreurlab-32x32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="images/favicon_io/couvreurlab-48x48.png">
 <link rel="icon" type="image/x-icon" href="images/favicon_io/couvreurlab.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/couvreurlab-apple-touch-icon.png">
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PeachPalm4LIFE project</title>
-    <style>
-
-        @import url('https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400&family=Lato:wght@400&display=swap');
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            font-weight: normal;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            padding-top: 60px;
-        }
-
-        /* ── Navigation ── */
-        .nav-box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            z-index: 1000;
-            padding: 0.75em 1em;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.4em 0.8em;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        /* ── Header ── */
-        header {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            padding: 7em 2em;
-            background-size: cover;
-            background-position: center;
-            background-color: #2c6e49;
-            background-image: url("images/landing_cuyabeno.JPG");
-            font-family: 'Fjalla One', sans-serif;
-        }
-
-        header h1 {
-            color: #fff;
-            margin: 0.5em 0;
-            font-size: clamp(1.4rem, 4vw, 2.4rem);
-            text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
-        }
-
-        /* ── Funding badge ── */
-        .funding-badge {
-            display: inline-block;
-            background-color: rgba(0,0,0,0.55);
-            color: #fff;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.9rem;
-            padding: 0.4em 1em;
-            border-radius: 4px;
-            margin-top: 0.8em;
-        }
-
-        /* ── Main section ── */
-        section {
-            max-width: 1200px;
-            margin: 2em auto;
-            padding: 2em;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            font-family: 'Lato', sans-serif;
-        }
-
-        h2 {
-            color: #3498db;
-            font-weight: bold;
-            font-family: 'Fjalla One', sans-serif;
-            margin-top: 1.6em;
-        }
-
-        h3 {
-            color: #2c6e49;
-            font-family: 'Fjalla One', sans-serif;
-            margin-top: 1.2em;
-        }
-
-        p {
-            line-height: 1.7;
-            text-align: justify;
-        }
-
-        a {
-            color: #1a6ebd;
-            text-decoration: underline;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ── Three-photo grid ── */
-        .photo-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1em;
-            margin-top: 1.5em;
-        }
-
-        .photo-container img {
-            flex: 1 1 28%;
-            min-width: 180px;
-            border-radius: 8px;
-            object-fit: cover;
-            aspect-ratio: 1 / 1;
-        }
-
-        /* ── WP cards ── */
-        .wp-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1.2em;
-            margin-top: 1.2em;
-        }
-
-        .wp-card {
-            background-color: #f0f8f4;
-            border-left: 4px solid #2c6e49;
-            border-radius: 6px;
-            padding: 1em 1.2em;
-        }
-
-        .wp-card h3 {
-            margin: 0 0 0.4em 0;
-            font-size: 1rem;
-            color: #2c6e49;
-        }
-
-        .wp-card p {
-            margin: 0;
-            font-size: 0.9rem;
-            text-align: left;
-        }
-
-        /* ── Partners logos / list ── */
-        .partner-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6em 1.2em;
-            margin-top: 0.8em;
-            padding: 0;
-            list-style: none;
-        }
-
-        .partner-list li {
-            background-color: #eaf4fb;
-            border-radius: 4px;
-            padding: 0.35em 0.8em;
-            font-size: 0.9rem;
-            font-weight: bold;
-            color: #1a6ebd;
-        }
-
-        /* ── Team table ── */
-        .team-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.9rem;
-            margin-top: 1em;
-            overflow-x: auto;
-            display: block;
-        }
-
-        .team-table th {
-            background-color: #2c6e49;
-            color: #fff;
-            padding: 0.6em 0.8em;
-            text-align: left;
-        }
-
-        .team-table td {
-            padding: 0.5em 0.8em;
-            border-bottom: 1px solid #e0e0e0;
-            vertical-align: top;
-        }
-
-        .team-table tr:nth-child(even) td {
-            background-color: #f7fdf9;
-        }
-
-        /* ── Info box ── */
-        .info-box {
-            background-color: #f0f8f4;
-            border-left: 4px solid #2c6e49;
-            border-radius: 4px;
-            padding: 1em 1.4em;
-            margin: 1.2em 0;
-        }
-
-        .info-box p {
-            margin: 0.3em 0;
-            text-align: left;
-        }
-
-        /* ── Publications placeholder ── */
-        .pub-placeholder {
-            background-color: #f9f9f9;
-            border: 1px dashed #ccc;
-            border-radius: 6px;
-            padding: 1.5em;
-            text-align: center;
-            color: #888;
-            font-style: italic;
-            margin-top: 1em;
-        }
-
-        /* ── Footer ── */
-        footer {
-            text-align: center;
-            padding: 0.8em 1em;
-            background-color: #3498db;
-            color: #fff;
-            font-family: 'Lato', sans-serif;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.5em;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1em;
-        }
-
-        .logo-container img {
-            width: 50px;
-            height: auto;
-            margin: 0;
-        }
-
-        /* ── Mobile ── */
-        @media (max-width: 600px) {
-            body { padding-top: 80px; }
-            header { padding: 4em 1em; }
-            section { margin: 1em; padding: 1.2em; }
-            nav a { font-size: 0.8rem; }
-            .footer-container { flex-direction: column; text-align: center; }
-            .photo-container img { flex: 1 1 100%; aspect-ratio: 4/3; }
-        }
-
-    </style>
-</head>
-
+    <meta name="description" content="Tropical Biodiversity Evolution Lab led by Thomas L.P. Couvreur at IRD. Research on tropical rain forest evolution, phylogenetics, conservation, and species diversity.">
+    <meta property="og:title" content="Tropical Biodiversity Evolution Lab">
+    <meta property="og:description" content="Research on the evolution, resilience, and diversity of tropical biodiversity and rain forests.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://couvreurlab.org/">
+    <meta property="og:image" content="https://couvreurlab.org/images/landing_cuyabeno.JPG">
+    <title>Tropical Biodiversity Evolution Lab</title>
+    <link rel="stylesheet" href="style.css">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM6HMDSPE7"></script>
 <script>
@@ -292,13 +24,12 @@
   gtag('js', new Date());
   gtag('config', 'G-PM6HMDSPE7');
 </script>
-
+</head>
 <body>
 
-<!-- Navigation -->
 <div class="nav-box">
     <nav>
-        <a href="index.html">HOME</a>
+        <a href="index.html" class="active">HOME</a>
         <a href="people.html">PEOPLE</a>
         <a href="peachpalm.html">PeachPalm4LIFE</a>
         <a href="publications.html">PUBLICATIONS</a>
@@ -308,28 +39,28 @@
     </nav>
 </div>
 
-    <header>
+    <header style="background-image: url('images/landing_cuyabeno.JPG');">
         <h1>TROPICAL BIODIVERSITY EVOLUTION LAB</h1>
-
-        <!-- Google Scholar link box on the image -->
         <div class="google-scholar-box">
-            <a href="https://scholar.google.com/citations?user=DH_RNS8AAAAJ&hl=fr" target="_blank" style="color: #fff; font-weight: bold;">Google Scholar</a>
+            <a href="https://scholar.google.com/citations?user=DH_RNS8AAAAJ&hl=fr" target="_blank">Google Scholar</a>
         </div>
     </header>
 
     <section>
-	
-        <p>I am <a href="https://scholar.google.com/citations?user=DH_RNS8AAAAJ&hl=fr" target="_blank">Thomas L.P. Couvreur (HDR, DR2)</a>, a researcher and botanist at the Institut de Recherche pour le Développement (IRD). My main interest lies in understanding the evolution, resilience, and diversity of tropical biodiversity, and rain forests in particular, one of the most complex and diverse ecosystems on the planet. Rain forests are important global climate regulators and provide subsidence such as food and shelter to millions of people across the tropics. I undertake research in taxonomy, conservation, molecular phylogenetics and phylogeography using DNA sequence data, morphological evolution, and modeling of species distribution at different time intervals. I also undertake research on economically important species (socio-economic studies and documentaries). I focus on two wonderful tropical rain forest plant families palms and the Soursop family Annonaceae. My research has an impact in tropical biodiversity conservation and provides fundamental data towards assessing the influence of ongoing climate change on tropical rain forest biodiversity.</p>
-		
-		    <!-- Three square photos -->
+        <p>I am <a href="https://scholar.google.com/citations?user=DH_RNS8AAAAJ&hl=fr" target="_blank">Thomas L.P. Couvreur (HDR, DR2)</a>, a researcher and botanist at the Institut de Recherche pour le Développement (IRD). My main interest lies in understanding the evolution, resilience, and diversity of tropical biodiversity, and rain forests in particular, one of the most complex and diverse ecosystems on the planet.</p>
+
+        <p>Rain forests are important global climate regulators and provide subsidence such as food and shelter to millions of people across the tropics. I undertake research in taxonomy, conservation, molecular phylogenetics and phylogeography using DNA sequence data, morphological evolution, and modeling of species distribution at different time intervals. I also undertake research on economically important species (socio-economic studies and documentaries).</p>
+
+        <p>I focus on two wonderful tropical rain forest plant families palms and the Soursop family Annonaceae. My research has an impact in tropical biodiversity conservation and provides fundamental data towards assessing the influence of ongoing climate change on tropical rain forest biodiversity.</p>
+
     <div class="photo-container">
         <img src="images/Oxandra.JPG" alt="Oxandra euneura, Annonaceae, Ecuador">
-        <img src="images/forest.JPG" alt="Cuyabeno rain forest, Ecuador">
-        <img src="images/cutting_fruit.JPG" alt="Cutting an Annonaceae fruit">
+        <img src="images/forest.JPG" alt="Cuyabeno rain forest, Ecuador" loading="lazy">
+        <img src="images/cutting_fruit.JPG" alt="Cutting an Annonaceae fruit" loading="lazy">
     </div>
-	</section>
+    </section>
 
-	<section>
+    <section>
 
 <h2>the setting</h2>
     <p>Tropical rain forests are the most biodiverse terrestrial ecosystems on the planet. Over half of the known biodiversity is packed within this biome, yet they spread out over just 7-10% of total land area centered around the equator. They represent an emblematic icon of the wonders of nature. They are true evolutionary labs where "anything goes" and where you can "expect the unexpected". This can be linked to the fact that rain forests have been around since the rise of flowering plants (angiosperms) over 100 million years ago. In the minds of people, rain forests represent the unknown or chaos and trigger sensations of fear and excitement mixed with amazement.</p>
@@ -338,37 +69,34 @@
         <h2 style="font-weight: bold; font-size: 2em;">"expect the unexpected"</h2>
     </div>
 
-    <p>Tropical rain forests have numerous commonly known nicknames such as "lungs of the planet", "treasure trove" or simply "the jungle". This underlines the important local and global importance of this ecosystem for humanity. Indeed, tropical rain forests provide countless ecosystem services to millions of people and act as important climate (local and global) regulators. The Millennium Ecosystem Assessment views loss of biodiversity [of which rain forest are a huge reservoir] as a direct threat to human-well being, impacting society at several levels such as “security, resiliency, social relations, health, and freedom of choices and actions”.
+    <p>Tropical rain forests have numerous commonly known nicknames such as "lungs of the planet", "treasure trove" or simply "the jungle". This underlines the important local and global importance of this ecosystem for humanity. Indeed, tropical rain forests provide countless ecosystem services to millions of people and act as important climate (local and global) regulators. The Millennium Ecosystem Assessment views loss of biodiversity [of which rain forest are a huge reservoir] as a direct threat to human-well being, impacting society at several levels such as "security, resiliency, social relations, health, and freedom of choices and actions".</p>
 
-    Yet, tropical rain forests are under severe pressure from human activity (logging, agriculture, etc) and ongoing climate change. Intact or primary forests are condemned to disappear before my children reach adulthood. These anthropomorphic activities will impact species distributions directly affecting the ecosystems services they provide at local and global levels. These changes will also accelerate the ongoing extinction of numerous species, most of them yet to be described by the scientific community.</p>
+    <p>Yet, tropical rain forests are under severe pressure from human activity (logging, agriculture, etc) and ongoing climate change. Intact or primary forests are condemned to disappear before my children reach adulthood. These anthropomorphic activities will impact species distributions directly affecting the ecosystems services they provide at local and global levels. These changes will also accelerate the ongoing extinction of numerous species, most of them yet to be described by the scientific community.</p>
 
-	
-		    <!-- Three square photos -->
     <div class="photo-container">
-        <img src="images/forest_asia.JPG" alt="Rain Forest in Borneo">
-        <img src="images/forest_ecuador.JPG" alt="Rain forest, Ecuador, ">
-        <img src="images/forest_cameroon.JPG" alt="Rain forest, Rumpi Mts, Cameroon">
+        <img src="images/forest_asia.JPG" alt="Rain Forest in Borneo" loading="lazy">
+        <img src="images/forest_ecuador.JPG" alt="Rain forest, Ecuador" loading="lazy">
+        <img src="images/forest_cameroon.JPG" alt="Rain forest, Rumpi Mts, Cameroon" loading="lazy">
     </div>
-	</section>
+    </section>
 
-	<section>
+    <section>
     <h2>the research</h2>
 
-	<p>The "Tropical Biodiversity Evolution" lab aims to understand how tropical biodiversity in general and tropical rain forests in particular have evolved over time and in the future. ​What are the evolutionary processes that have affected this diversity through time? How did this rich diversity react to past climate changes? We also want to understand how this diversity will be affected by future global change as well as understand the resilience of this ecosystem. What scenarios can we project for the future of biodiversity in the tropics?​ <p>
+    <p>The "Tropical Biodiversity Evolution" lab aims to understand how tropical biodiversity in general and tropical rain forests in particular have evolved over time and in the future. What are the evolutionary processes that have affected this diversity through time? How did this rich diversity react to past climate changes? We also want to understand how this diversity will be affected by future global change as well as understand the resilience of this ecosystem. What scenarios can we project for the future of biodiversity in the tropics?</p>
 
-	<p>We concentrate on several time frames ranging from ancient processes (tens of millions of years ago) to more recent ones (millions of years ago or thousands of years ago). This wide time frame enables us to use alternative methods for understanding evolutionary processes from molecular phylogenetics using DNA sequence data (between genera and species) to phylogeography and genetic diversity dynamics of selected species (within species or closely related species). We also use future climate models and modeling approaches to infer possible future scenarios of biodiversity evolution. We mainly focus on Africa but have also interests in the Neotropics and South East Asia.<p>
+    <p>We concentrate on several time frames ranging from ancient processes (tens of millions of years ago) to more recent ones (millions of years ago or thousands of years ago). This wide time frame enables us to use alternative methods for understanding evolutionary processes from molecular phylogenetics using DNA sequence data (between genera and species) to phylogeography and genetic diversity dynamics of selected species (within species or closely related species). We also use future climate models and modeling approaches to infer possible future scenarios of biodiversity evolution. We mainly focus on Africa but have also interests in the Neotropics and South East Asia.</p>
 
-	<p>Besides constructing molecular phylogenies we use integrative methods to addresses hypotheses about TRF evolution. These methods include molecular dating, ancestral area reconstructions (biogeography), diversification rate analyses, ancestral character reconstruction (morphology or biomes) and species distribution modeling (using GIS). We are also active in generating new molecular biology protocols for more efficient DNA sequences across more species.<p>
+    <p>Besides constructing molecular phylogenies we use integrative methods to addresses hypotheses about TRF evolution. These methods include molecular dating, ancestral area reconstructions (biogeography), diversification rate analyses, ancestral character reconstruction (morphology or biomes) and species distribution modeling (using GIS). We are also active in generating new molecular biology protocols for more efficient DNA sequences across more species.</p>
 
-	<p>Recently we have also started looking at the socio-economic importance of certain important species and their responses to ongoing climate change in the tropics.
+    <p>Recently we have also started looking at the socio-economic importance of certain important species and their responses to ongoing climate change in the tropics.
 
-	Finally, we also undertake research in conservation of plant species. We have mainly been active in IUCN red listing.</p>
-	</section>
+    Finally, we also undertake research in conservation of plant species. We have mainly been active in IUCN red listing.</p>
+    </section>
 
 <footer>
     <div class="footer-container">
         <p>&copy; 2026 Thomas L.P. Couvreur @ird </p>
-        
         <div class="logo-container">
             <img src="images/ird.png" alt="IRD">
             <img src="images/diade.png" alt="DIADE">

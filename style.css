@@ -1,0 +1,416 @@
+@import url('https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400&family=Lato:wght@400&display=swap');
+
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-top: 60px;
+}
+
+/* ── Navigation ── */
+.nav-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000;
+    z-index: 1000;
+    padding: 0.75em 1em;
+}
+
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.4em 0.8em;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    white-space: nowrap;
+    transition: opacity 0.2s;
+}
+
+nav a:hover,
+nav a:focus {
+    text-decoration: underline;
+    opacity: 0.85;
+}
+
+nav a.active {
+    font-weight: bold;
+    border-bottom: 2px solid #fff;
+    padding-bottom: 2px;
+}
+
+/* ── Header ── */
+header {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    padding: 7em 2em;
+    background-size: cover;
+    background-position: center;
+    background-color: #2c6e49;
+    font-family: 'Fjalla One', sans-serif;
+}
+
+header h1 {
+    color: #fff;
+    margin: 0.5em 0;
+    font-size: clamp(1.4rem, 4vw, 2.4rem);
+    text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+header p {
+    color: #fff;
+}
+
+/* ── Google Scholar box ── */
+.google-scholar-box {
+    display: inline-block;
+    background-color: rgba(255,102,102,0.9);
+    color: #fff;
+    padding: 0.5em 1.2em;
+    border-radius: 5px;
+    margin-top: 1em;
+}
+
+.google-scholar-box a {
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* ── Funding badge ── */
+.funding-badge {
+    display: inline-block;
+    background-color: rgba(0,0,0,0.55);
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    padding: 0.4em 1em;
+    border-radius: 4px;
+    margin-top: 0.8em;
+}
+
+/* ── Main section ── */
+section {
+    max-width: 1200px;
+    margin: 2em auto;
+    padding: 2em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 5px;
+    font-family: 'Lato', sans-serif;
+}
+
+h2 {
+    color: #3498db;
+    font-weight: bold;
+    font-family: 'Fjalla One', sans-serif;
+    margin-top: 1.6em;
+}
+
+h3 {
+    color: #2c6e49;
+    font-family: 'Fjalla One', sans-serif;
+    margin-top: 1.2em;
+}
+
+p {
+    line-height: 1.7;
+    text-align: justify;
+}
+
+a {
+    color: #1a6ebd;
+    text-decoration: underline;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ── Three-photo grid ── */
+.photo-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    margin-top: 1.5em;
+}
+
+.photo-container img {
+    flex: 1 1 28%;
+    min-width: 180px;
+    border-radius: 8px;
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+}
+
+/* ── WP cards ── */
+.wp-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.2em;
+}
+
+.wp-card {
+    background-color: #f0f8f4;
+    border-left: 4px solid #2c6e49;
+    border-radius: 6px;
+    padding: 1em 1.2em;
+}
+
+.wp-card h3 {
+    margin: 0 0 0.4em 0;
+    font-size: 1rem;
+    color: #2c6e49;
+}
+
+.wp-card p {
+    margin: 0;
+    font-size: 0.9rem;
+    text-align: left;
+}
+
+/* ── Partners logos / list ── */
+.partner-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6em 1.2em;
+    margin-top: 0.8em;
+    padding: 0;
+    list-style: none;
+}
+
+.partner-list li {
+    background-color: #eaf4fb;
+    border-radius: 4px;
+    padding: 0.35em 0.8em;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #1a6ebd;
+}
+
+/* ── Team table ── */
+.team-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+    margin-top: 1em;
+    overflow-x: auto;
+    display: block;
+}
+
+.team-table th {
+    background-color: #2c6e49;
+    color: #fff;
+    padding: 0.6em 0.8em;
+    text-align: left;
+}
+
+.team-table td {
+    padding: 0.5em 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+    vertical-align: top;
+}
+
+.team-table tr:nth-child(even) td {
+    background-color: #f7fdf9;
+}
+
+/* ── Info box ── */
+.info-box {
+    background-color: #f0f8f4;
+    border-left: 4px solid #2c6e49;
+    border-radius: 4px;
+    padding: 1em 1.4em;
+    margin: 1.2em 0;
+}
+
+.info-box p {
+    margin: 0.3em 0;
+    text-align: left;
+}
+
+/* ── Publications placeholder ── */
+.pub-placeholder {
+    background-color: #f9f9f9;
+    border: 1px dashed #ccc;
+    border-radius: 6px;
+    padding: 1.5em;
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-top: 1em;
+}
+
+/* ── Video + text ── */
+.video-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    align-items: flex-start;
+    margin-top: 1em;
+}
+
+.video-container {
+    flex: 1 1 280px;
+    min-width: 0;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/9;
+    border: none;
+}
+
+.video-text {
+    flex: 1 1 280px;
+    min-width: 0;
+}
+
+/* ── Photo + text ── */
+.photo-text-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    gap: 1.2em;
+    margin: 1.5em 0;
+}
+
+.left-photo {
+    width: 180px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.right-text {
+    flex: 1 1 200px;
+    min-width: 0;
+    text-align: left;
+}
+
+/* ── Past members ── */
+.researcher-container {
+    margin-bottom: 1.4em;
+    padding-bottom: 1em;
+    border-bottom: 1px solid #eee;
+}
+
+.researcher-container:last-of-type {
+    border-bottom: none;
+}
+
+.researcher-text {
+    text-align: left;
+}
+
+/* ── Publications section nav ── */
+.section-nav {
+    background-color: #eaf4fb;
+    border-left: 4px solid #3498db;
+    border-radius: 4px;
+    padding: 1em 1.5em;
+    margin-bottom: 2em;
+}
+
+.section-nav p {
+    margin: 0 0 0.5em 0;
+    font-weight: bold;
+    color: #333;
+    text-align: left;
+}
+
+.section-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1.5em;
+}
+
+.section-nav ul li a {
+    color: #1a6ebd;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+.section-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* ── Publication entries ── */
+.pub-entry {
+    padding: 0.6em 0;
+    border-bottom: 1px solid #f0f0f0;
+    line-height: 1.55;
+    font-size: 0.95rem;
+}
+
+.pub-entry:last-child {
+    border-bottom: none;
+}
+
+.pub-num {
+    font-weight: bold;
+    color: #3498db;
+    margin-right: 0.4em;
+}
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    padding: 0.8em 1em;
+    background-color: #3498db;
+    color: #fff;
+    font-family: 'Lato', sans-serif;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.logo-container img {
+    width: 50px;
+    height: auto;
+    margin: 0;
+}
+
+/* ── Mobile ── */
+@media (max-width: 600px) {
+    body { padding-top: 80px; }
+    header { padding: 4em 1em; }
+    section { margin: 1em; padding: 1.2em; }
+    nav a { font-size: 0.8rem; }
+    .footer-container { flex-direction: column; text-align: center; }
+    .photo-container img { flex: 1 1 100%; aspect-ratio: 4/3; }
+    .left-photo { width: 120px; }
+}

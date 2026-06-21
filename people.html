@@ -1,269 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  
-  
 <link rel="icon" type="image/png" sizes="16x16" href="images/favicon_io/couvreurlab-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="images/favicon_io/couvreurlab-32x32.png">
 <link rel="icon" type="image/png" sizes="48x48" href="images/favicon_io/couvreurlab-48x48.png">
 <link rel="icon" type="image/x-icon" href="images/favicon_io/couvreurlab.ico">
 <link rel="apple-touch-icon" sizes="180x180" href="images/favicon_io/couvreurlab-apple-touch-icon.png">
-
-  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Current and past members of the Tropical Biodiversity Evolution Lab at IRD, led by Thomas L.P. Couvreur.">
+    <meta property="og:title" content="Lab Members - Tropical Biodiversity Evolution Lab">
+    <meta property="og:description" content="Current and past members of the Tropical Biodiversity Evolution Lab at IRD.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://couvreurlab.org/people.html">
+    <meta property="og:image" content="https://couvreurlab.org/images/members.JPG">
     <title>Lab Members</title>
+    <link rel="stylesheet" href="style.css">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Fjalla+One:wght@400&family=Lato:wght@400&display=swap');
-
-        *, *::before, *::after {
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Lato', sans-serif;
-            font-weight: normal;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            padding-top: 60px;
-        }
-
-        /* ── Navigation ── */
-        .nav-box {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #000;
-            z-index: 1000;
-            padding: 0.75em 1em;
-        }
-
-        nav {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 0.4em 0.8em;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.9rem;
-            white-space: nowrap;
-        }
-
-        /* ── Header ── */
-        header {
-            position: relative;
-            text-align: center;
-            color: #fff;
-            padding: 6em 2em;
-            background-size: cover;
-            background-position: center;
-            background-color: #000;
-            background-image: url("images/members.JPG");
-            font-family: 'Fjalla One', sans-serif;
-        }
-
-        header h1, header p {
-            color: #fff;
-            margin: 1em 0;
-        }
-
-        h1.black-text { color: #fff; }
-
-        /* ── Main section ── */
-        section {
-            max-width: 1200px;
-            margin: 2em auto;
-            padding: 2em;
-            background-color: #fff;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 5px;
-            font-family: 'Lato', sans-serif;
-        }
-
-        h2 {
-            color: #3498db;
-            font-weight: bold;
-            font-family: 'Fjalla One', sans-serif;
-            margin-top: 1.8em;
-        }
-
-        p {
-            line-height: 1.7;
-            text-align: left;
-        }
-
-        a {
-            color: #1a6ebd;
-            text-decoration: underline;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* ── Video + text (group leader) ── */
-        .video-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5em;
-            align-items: flex-start;
-            margin-top: 1em;
-        }
-
-        .video-container {
-            flex: 1 1 280px;
-            min-width: 0;
-        }
-
-        .video-container iframe {
-            width: 100%;
-            height: auto;
-            aspect-ratio: 16/9;
-            border: none;
-        }
-
-        .video-text {
-            flex: 1 1 280px;
-            min-width: 0;
-        }
-
-        /* ── Photo + text (members) ── */
-        .photo-text-container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            gap: 1.2em;
-            margin: 1.5em 0;
-        }
-
-        .left-photo {
-            width: 180px;
-            flex-shrink: 0;
-            border-radius: 10px;
-            object-fit: cover;
-        }
-
-        .right-text {
-            flex: 1 1 200px;
-            min-width: 0;
-            text-align: left;
-        }
-
-        /* ── Past members ── */
-        .researcher-container {
-            margin-bottom: 1.4em;
-            padding-bottom: 1em;
-            border-bottom: 1px solid #eee;
-        }
-
-        .researcher-container:last-of-type {
-            border-bottom: none;
-        }
-
-        .researcher-text {
-            text-align: left;
-        }
-
-        /* ── Footer ── */
-        footer {
-            text-align: center;
-            padding: 0.8em 1em;
-            background-color: #3498db;
-            color: #fff;
-            font-family: 'Lato', sans-serif;
-        }
-
-        .footer-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: center;
-            gap: 0.5em;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 1em;
-        }
-
-        .logo-container img {
-            width: 50px;
-            height: auto;
-            margin: 0;
-        }
-
-        /* ── Mobile tweaks ── */
-        @media (max-width: 600px) {
-            body { padding-top: 80px; }
-
-            header { padding: 4em 1em; }
-
-            section { margin: 1em; padding: 1.2em; }
-
-            .left-photo {
-                width: 120px;
-            }
-
-            .footer-container {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            nav a { font-size: 0.8rem; }
-        }
+        header { padding: 6em 2em; background-color: #000; }
+        p { text-align: left; }
+        h2 { margin-top: 1.8em; }
     </style>
-	
-	
-</head>
-
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-PM6HMDSPE7"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-PM6HMDSPE7');
 </script>
-
+</head>
 <body>
-    <!-- Black box for navigation links -->
+
 <div class="nav-box">
-    <!-- Navigation links -->
     <nav>
-	    <a href="index.html">HOME</a>
-        <a href="people.html">PEOPLE</a>
-        <a href="peachpalm.html">PeachPalm4LIFE ANR</a>
+        <a href="index.html">HOME</a>
+        <a href="people.html" class="active">PEOPLE</a>
+        <a href="peachpalm.html">PeachPalm4LIFE</a>
         <a href="publications.html">PUBLICATIONS</a>
         <a href="videos.html">VIDEOS</a>
         <a href="apc.html">AGPC</a>
-		<a href="roadtoerc.html">ERC BLOG</a>
+        <a href="roadtoerc.html">ERC BLOG</a>
     </nav>
 </div>
 
-    <header>
-        <h1 class="black-text">LAB MEMBERS</h1>
+    <header style="background-image: url('images/members.JPG');">
+        <h1>LAB MEMBERS</h1>
     </header>
 
     <section>
-	
-	
-	<h2>group leader</h2>
-	
-	    <div class="video-section">
+
+<h2>group leader</h2>
+
+    <div class="video-section">
         <div class="video-container">
             <iframe width="500" height="315" src="https://www.youtube.com/embed/XKiE4kdRnS8" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
         </div>
         <div class="video-text">
             <p><a href="https://scholar.google.com/citations?user=DH_RNS8AAAAJ&hl=fr" target="_blank">Thomas L.P. Couvreur</a> (HDR, Directeur de Recherche 1)</p>
@@ -273,11 +64,10 @@
 
 <br>
 
-
-	<h2>post doctoral researchers</h2>
+<h2>post doctoral researchers</h2>
 
 <div class="photo-text-container">
-    <img class="left-photo" src="images/Tania_gonzales.jfif" alt="Laura">
+    <img class="left-photo" src="images/Tania_gonzales.jfif" alt="Tania" loading="lazy">
     <div class="right-text">
         <p><strong>Dr. Tania Gonzalez Rivadeneira</strong>
         (<a href="https://scholar.google.com/citations?view_op=list_works&hl=fr&hl=fr&user=K_2-68MAAAAJ" target="_blank">Google Scholar</a>)</p>
@@ -288,7 +78,7 @@
 <h2>PhD students</h2>
 
 <div class="photo-text-container">
-    <img class="left-photo" src="images/erica.jpeg" alt="Erica">
+    <img class="left-photo" src="images/erica.jpeg" alt="Erica" loading="lazy">
     <div class="right-text">
         <p><strong>Erica Onjaniaina Ravomanana</strong><br>
         Co-supervised with Dr. Mijoro Rakotoarinivo<br>
@@ -298,7 +88,7 @@
 </div>
 
 <div class="photo-text-container">
-    <img class="left-photo" src="images/valerie.jpg" alt="Valerie">
+    <img class="left-photo" src="images/valerie.jpg" alt="Valerie" loading="lazy">
     <div class="right-text">
         <p><strong>Valérie Tolotra Ramarosandratana</strong><br>
         Co-supervised with Dr. Mijoro Rakotoarinivo<br>
@@ -308,7 +98,7 @@
 </div>
 
 <div class="photo-text-container">
-    <img class="left-photo" src="images/ishaq.jpg" alt="Ishaq">
+    <img class="left-photo" src="images/ishaq.jpg" alt="Ishaq" loading="lazy">
     <div class="right-text">
         <p><strong>Ishaq Muawiyya</strong><br>
         Co-supervised with Dr. Abubakar Bello<br>
@@ -323,13 +113,11 @@
 
 <h2>Past members</h2>
 
-<!-- Archimède Patipe -->
 <div class="researcher-container">
     <p><strong>Archimède Patipe</strong><br>
     Was the bioinformatician of the ERC GLOBAL project.</p>
 </div>
 
-<!-- Dr. Laura Holzmeyer -->
 <div class="researcher-container">
     <p><strong>Dr. Laura Holzmeyer</strong>
     (<a href="https://scholar.google.com/citations?user=ECWj9p0AAAAJ&hl=fr&oi=ao" target="_blank">Google Scholar</a>)<br>
@@ -340,7 +128,6 @@
     Molecular Phylogenetics and Evolution 215: 108485.</p>
 </div>
 
-<!-- Dr. Serafin Streiff -->
 <div class="researcher-container">
     <p><strong>Dr. Serafin Streiff</strong><br>
     PhD, University of Montpellier, 2012–2025.</p>
@@ -352,13 +139,11 @@
     Annals of the Missouri Botanical Garden 110: 200–216.</p>
 </div>
 
-<!-- Dr. Carlos Rodrigues-Vaz -->
 <div class="researcher-container">
     <p><strong>Dr. Carlos Rodrigues-Vaz</strong><br>
     Botanical engineer (based in Paris, MNHN), 2020–2023.</p>
 </div>
 
-<!-- Dr. Suzanne Kamga Mogue -->
 <div class="researcher-container">
     <p><strong>Dr. Suzanne Kamga Mogue</strong><br>
     PhD, University of Youndé I, 2012–2025. <br>
@@ -369,13 +154,11 @@
     <a href="https://doi.org/10.3897/BDJ.7.e37757q" target="_blank">Raphia vinifera (Arecaceae; Calamoideae): Misidentified for far too long</a>. Biodiversity Data Journal 7: e37757.</p>
 </div>
 
-<!-- Alix Lozinguez -->
 <div class="researcher-container">
     <p><strong>Alix Lozinguez</strong><br>
     VI IRD Quito, 2021–2023.</p>
 </div>
 
-<!-- Dr. Francis Nge -->
 <div class="researcher-container">
     <p><strong>Dr. Francis Nge</strong>
     (<a href="https://scholar.google.com/citations?user=52JhlLEAAAAJ&hl=fr&oi=ao" target="_blank">Google Scholar</a>)<br>
@@ -383,38 +166,32 @@
     Now Researcher at the Sydney Botanic Gardens, Australia.</p>
 </div>
 
-<!-- Lily Bennett -->
 <div class="researcher-container">
     <p><strong>Lily Bennett</strong><br>
     Master, Université de Montpellier, France, 2023.</p>
 </div>
 
-<!-- Nicolas Zapata -->
 <div class="researcher-container">
     <p><strong>Nicolas Zapata</strong><br>
     Botanist (based in Quito, Ecuador).</p>
 </div>
 
-<!-- Andrea Fernandez -->
 <div class="researcher-container">
     <p><strong>Andrea Fernandez</strong><br>
     Botanist (based in Quito, Ecuador).</p>
 </div>
 
-<!-- Laureline Petit-Bagnard -->
 <div class="researcher-container">
     <p><strong>Laureline Petit-Bagnard</strong><br>
     Co-supervised by Dr. Germinal Rouhan.<br>
     Master, University of Montpellier, Montpellier / Paris, 2022.</p>
 </div>
 
-<!-- Vincent Soulé -->
 <div class="researcher-container">
     <p><strong>Vincent Soulé</strong><br>
     Research engineer, IRD, 2021–2023.</p>
 </div>
 
-<!-- Dr. Mariano Kpatenon Joly -->
 <div class="researcher-container">
     <p><strong>Dr. Mariano Kpatenon Joly</strong><br>
     Co-directed with Adeoti Adeola Zouri-Kifouli, Université d'Abomey-Calavi, Bénin, and Estelle Jaligot (CIRAD, Montpellier).<br>
@@ -424,7 +201,6 @@
     BMC Genetics 21: 145.</p>
 </div>
 
-<!-- Dr. Léo Paul Dagallier -->
 <div class="researcher-container">
     <p><strong>Dr. Léo Paul Dagallier</strong>
     (<a href="https://scholar.google.com/citations?user=qdnOs0YAAAAJ&hl=fr&oi=ao" target="_blank">Google Scholar</a>)<br>
@@ -435,7 +211,6 @@
     <a href="https://doi.org/10.3897/phytokeys.174.61630" target="_blank">Three New Species of Uvariodendron (Annonaceae) from Coastal East Africa in Kenya and Tanzania</a>. PhytoKeys 174: 107–126.</p>
 </div>
 
-<!-- Dr. Sebastián Pablo Escobar Vasquez -->
 <div class="researcher-container">
     <p><strong>Dr. Sebastián Pablo Escobar Vasquez</strong><br>
     (<a href="https://scholar.google.com/citations?user=xTIafLEAAAAJ&hl=fr&oi=sra" target="_blank">Google Scholar</a>)<br>
@@ -447,7 +222,6 @@
     <a href="https://doi.org/10.1111/jbi.14055" target="_blank">Pleistocene Climatic Fluctuations Promoted Alternative Evolutionary Histories in Phytelephas aequatorialis, an Endemic Palm from Western Ecuador</a>. Journal of Biogeography.</p>
 </div>
 
-<!-- Dr. Andrew Helmstetter -->
 <div class="researcher-container">
     <p><strong>Dr. Andrew Helmstetter</strong>
     (<a href="https://scholar.google.com/citations?user=Ye-lhkIAAAAJ&hl=fr&oi=ao" target="_blank">Google Scholar</a>)<br>
@@ -458,7 +232,6 @@
     <a href="https://doi.org/10.1111/mec.15572" target="_blank">Phylogenomic Approaches Reveal How Climate Shapes Patterns of Genetic Diversity in an African Rain Forest Tree Species</a>. Molecular Ecology 29: 3560–3573.</p>
 </div>
 
-<!-- Dr. Jean Paul Ghogue -->
 <div class="researcher-container">
     <p><strong>Dr. Jean Paul Ghogue</strong><br>
     PhD, co-supervised with Prof. Sonké.<br>
@@ -467,7 +240,6 @@
     <a href="link-to-ghogue-paper" target="_blank">Revision of the African genera Brieya and Piptostigma</a>. Plant Ecology and Evolution 217: 173–216.</p>
 </div>
 
-<!-- Dr. Brandet Junior Lissambou -->
 <div class="researcher-container">
     <p><strong>Dr. Brandet Junior Lissambou</strong><br>
     PhD, co-supervised by Christiane Ateké, Olivier Hardy and Bonaventure Sonké.<br>
@@ -478,7 +250,6 @@
     <a href="https://doi.org/10.1002/tax.12064" target="_blank">Species delimitation in the genus Greenwayodendron based on morphological and genetic markers reveals new species</a>. TAXON 68: 442–454.</p>
 </div>
 
-<!-- Dr. Marie Claire Veranso -->
 <div class="researcher-container">
     <p><strong>Dr. Marie Claire Veranso</strong>
     (<a href="https://scholar.google.com/citations?user=vh6Yd-kAAAAJ&hl=fr&oi=ao" target="_blank">Google Scholar</a>)<br>
@@ -489,21 +260,18 @@
     <a href="https://doi.org/10.1111/nph.14298" target="_blank">Phylogeny and systematics of African Melastomateae (Melastomataceae)</a>. Taxon 6: 584–614.</p>
 </div>
 
-<!-- Alix Pugeaut -->
 <div class="researcher-container">
     <p><strong>Alix Pugeaut</strong><br>
     Master II student, 2017.<br>
     Muséum National d'Histoire Naturelle, Paris.</p>
 </div>
 
-<!-- Dr. Amira Azizan -->
 <div class="researcher-container">
     <p><strong>Dr. Amira Azizan</strong><br>
     Master I student, 2016.<br>
     Université de Montpellier 2, AgroParisTech.</p>
 </div>
 
-<!-- Dr. Gilles Dauby -->
 <div class="researcher-container">
     <p><strong>Dr. Gilles Dauby</strong><br>
     Postdoctoral fellow, RAINBIO project, 2014–2016.</p>
@@ -513,7 +281,6 @@
     <a href="https://doi.org/10.1186/s12863-017-0527-9" target="_blank">BMC Biology 15: 1–15</a>.</p>
 </div>
 
-<!-- Dr. Adama Faye -->
 <div class="researcher-container">
     <p><strong>Dr. Adama Faye</strong>
     (<a href="https://scholar.google.com/citations?user=27GVrB4AAAAJ&hl=fr&oi=sra" target="_blank">Google Scholar</a>)<br>
@@ -529,7 +296,6 @@
     <a href="https://doi.org/10.1111/mec.13486" target="_blank">Intra‐individual polymorphism in chloroplasts from NGS data: where does it come from and how to handle it?</a> Molecular Ecology Resources 16: 434–445.</p>
 </div>
 
-<!-- Dr. Vincent Deblauwe -->
 <div class="researcher-container">
     <p><strong>Dr. Vincent Deblauwe</strong>
     (<a href="https://scholar.google.com/citations?user=_Lq15wsAAAAJ&hl=fr&oi=ao" target="_blank">Google Scholar</a>)<br>
@@ -538,12 +304,12 @@
     <p>Deblauwe, V., Droissart, V., Bose, R., Sonké, B., Blach-Overgaard, A., Svenning, J.C., Wieringa, J.J., Ramesh, B.R., Stévart, T., Couvreur, T.L.P. (2016).
     <a href="https://doi.org/10.1111/geb.12405" target="_blank">Remotely sensed temperature and precipitation data improve species distribution modelling in the tropics</a>. Global Ecology and Biogeography 25: 443–454.</p>
 </div>
-	
+
+    </section>
 
 <footer>
     <div class="footer-container">
         <p>&copy; 2026 Thomas L.P. Couvreur @ird </p>
-        
         <div class="logo-container">
             <img src="images/ird.png" alt="IRD">
             <img src="images/diade.png" alt="DIADE">
